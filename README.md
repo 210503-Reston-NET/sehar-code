@@ -1,2 +1,2 @@
 # sehar-code
-This is Marielle's code. Anything she demos goes here.
+This is Sehar's code. Anything she practice for the lectures goes here.
