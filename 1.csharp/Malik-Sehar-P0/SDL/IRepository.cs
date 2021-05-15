@@ -9,6 +9,7 @@ namespace SDL
         MCustomer AddCustomer(MCustomer customer);
         MProduct AddProduct(MProduct product);
         MProduct GetAProduct(MProduct product);
+        List<MLocation> GetAllLocation();
         
     }
 }

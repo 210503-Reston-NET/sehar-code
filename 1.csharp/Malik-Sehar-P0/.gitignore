@@ -547,6 +547,7 @@ $RECYCLE.BIN/
 
 # Cake - Uncomment if you are using it
 # tools/**
+appsettings.json
 # !tools/packages.config
 
 # Tabs Studio

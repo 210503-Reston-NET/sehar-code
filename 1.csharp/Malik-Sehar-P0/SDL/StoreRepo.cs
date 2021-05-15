@@ -23,7 +23,12 @@ namespace SDL
             return product;
         }
         public MProduct GetAProduct(MProduct product){
-            return StorageSC.products.FirstOrDefault(product => product.Id.Equals(product.Id));
+            return StorageSC.products.FirstOrDefault(pro => pro.Name.Equals(product.Name) && pro.Price.Equals(product.Price));
+        }
+
+        public List<MLocation> GetAllLocation()
+        {
+            return StorageSC.locations;
         }
     }
 }

@@ -5,10 +5,14 @@ namespace SDL
     public class StorageSC
     {
         public static List<MCustomer> customers = new List<MCustomer>(){
-            new MCustomer(2, "Sehar", "Malik")
+            new MCustomer("Sehar", "1234567", "Reno NV")
         };
         public static List<MProduct> products = new List<MProduct>(){
-            new MProduct(1, "Chocolate", "This is Dairy Milk Chocolate", 10, 1)
+            new MProduct("Chocolate",10.00)
+        };
+
+        public static List<MLocation> locations = new List<MLocation>(){
+            new MLocation("Walmart","xyz")
         };
     }
 }
