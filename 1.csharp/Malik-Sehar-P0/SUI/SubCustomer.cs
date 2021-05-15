@@ -4,7 +4,7 @@ using Models;
 using System;
 namespace SUI
 {
-    public class SubCustomer: ICustomer
+    public class SubCustomer: IChocolateFactory
     {
         private ICustomerBL _iCustomerBL;
         private IValidateService _ivalidateService;
@@ -38,20 +38,29 @@ namespace SUI
         }
         private void ViewCustomers(){
             List<MCustomer> customers = _iCustomerBL.GetAllCustomers();
-            foreach (MCustomer customer in customers)
-            {
-                Console.WriteLine(customer.ToString());
+            if(customers.Count == 0){
+                Console.WriteLine("There is no Customer, Please add one.");
+            }else{
+                foreach (MCustomer customer in customers)
+                {
+                    Console.WriteLine(customer.ToString());
+                }
             }
+            
         }
         private void AddACustomer(){
             Console.WriteLine("Add Customer Details!");
-            int id = 1;
-            string firstName = _ivalidateService.ValidateString("Enter Customer's First Name:");
-            string lastName = _ivalidateService.ValidateString("Enter Customer's Last Name:");
+            string Name = _ivalidateService.ValidateString("Enter Customer's Name:");
+            string PhoneNo = _ivalidateService.ValidateString("Enter Customer's PhoneNo:");
+            string Address = _ivalidateService.ValidateString("Enter Customer's Address:");
+            MCustomer customer = new MCustomer(Name, PhoneNo, Address);
 
-            MCustomer customer = new MCustomer(id,firstName, lastName);
-            MCustomer createdCustomer = _iCustomerBL.AddCustomer(customer);
-            Console.WriteLine(createdCustomer.ToString());
+            try{
+                MCustomer createdCustomer = _iCustomerBL.AddCustomer(customer);
+                Console.WriteLine(createdCustomer.ToString());
+            }catch(Exception ex){
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }

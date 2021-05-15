@@ -4,7 +4,7 @@ using SBL;
 using Models;
 namespace SUI
 {
-    public class ProductUICreation : IProduct
+    public class ProductUICreation : IChocolateFactory
     {
         private IProductBL _iProductBL;
         private IValidateService _iValidate;
@@ -15,16 +15,11 @@ namespace SUI
         public void start(){
             bool repeat = true;
         do {
-                Console.WriteLine("Press 1 to Add Product");
-                Console.WriteLine("Press 2 to View Products");
+                Console.WriteLine("Press 1 to View Products");
                 Console.WriteLine("Press 0 to Exit");
                 string input = Console.ReadLine(); 
             switch(input){
                 case "1":
-                    //Add Product Function goes here.
-                    AddProduct();
-                break;
-                case "2":
                     ViewProducts();
                 break;
                 case "0":
@@ -45,22 +40,6 @@ namespace SUI
                 {
                     Console.WriteLine(product.ToString());
                 }
-            }
-        }
-        private void AddProduct(){
-            int Id;
-            Random generator = new Random();
-            Id = generator.Next(100000, 1000000);
-            string Title = _iValidate.ValidateString("Enter Product Title:");
-            string Description = _iValidate.ValidateString("Enter Product Description:");
-            double Price = _iValidate.ValidateDouble("Enter the Price");
-            int quatity = _iValidate.ValidateInt("Enter quatity of products");
-            MProduct CreatedProduct = new MProduct(Id,Title,Description,Price,quatity);
-            try{
-                MProduct NewProduct = _iProductBL.AddAProduct(CreatedProduct);
-                Console.WriteLine(NewProduct.ToString());
-            }catch(Exception ex){
-                Console.WriteLine(ex.Message);
             }
         }
     }

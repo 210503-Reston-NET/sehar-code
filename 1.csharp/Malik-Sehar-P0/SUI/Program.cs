@@ -6,10 +6,7 @@ namespace SUI
     {
         static void Main(string[] args)
         {
-            // ICustomer customer = new CustomerUI();
-            // customer.start();
-            IProduct product = new ProductUI();
-            product.start();
+            ChocolateFactory.mainMenu("main").start();
         }
     }
 }

@@ -1,6 +1,6 @@
 namespace SUI
 {
-    public interface ICustomer
+    public interface IChocolateFactory
     {
         void start();
     }

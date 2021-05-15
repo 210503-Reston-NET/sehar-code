@@ -4,9 +4,9 @@ using SBL;
 using SDL;
 namespace SUI
 {
-    public class CustomerUI: ICustomer
+    public class CustomerUI: IChocolateFactory
     {
-        private ICustomer subCustomer;
+        private IChocolateFactory subCustomer;
         public void start(){
             bool repeat = true;
             do{
@@ -15,7 +15,7 @@ namespace SUI
                 string input = Console.ReadLine(); 
             switch(input){
                 case "1":
-                    subCustomer = new SubCustomer(new CustomerBL(new StoreRepo()),  new ValidateService());
+                    subCustomer = ChocolateFactory.mainMenu("customers");
                     subCustomer.start();
                 break;
                 case "0":
