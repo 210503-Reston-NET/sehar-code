@@ -6,5 +6,6 @@ namespace SBL
     {
         List<MCustomer> GetAllCustomers();
         MCustomer AddCustomer(MCustomer customer);
+        MCustomer searchACustomer(MCustomer customer);
     }
 }

@@ -3,12 +3,12 @@ using System.Collections.Generic;
 
 #nullable disable
 
-namespace SDL.Entities
+namespace SUI.Entities
 {
     public partial class Inventory
     {
         public int Id { get; set; }
-        public int StoreId { get; set; }
+        public int? StoreId { get; set; }
         public string ProductId { get; set; }
         public int Quantity { get; set; }
 

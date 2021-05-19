@@ -6,6 +6,11 @@ namespace Models
             this.Name = name;
             this.Address = address;
         }
+        //Constructor chaining
+        public MLocation(int id, string name, string address) : this(name, address)
+        {
+            this.Id = id;
+        }
         public int Id {get;}
         public string Name {get; set;}
 

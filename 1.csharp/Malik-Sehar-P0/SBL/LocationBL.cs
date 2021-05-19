@@ -13,5 +13,15 @@ namespace SBL
         {
             return _repo.GetAllLocation();
         }
+
+        public List<MInventory> GetProductInStock(MLocation mLocation)
+        {
+            return _repo.GetProductInStock(mLocation);
+        }
+
+        public MLocation GetStore(MLocation location)
+        {
+            return _repo.GetAStore(location);
+        }
     }
 }

@@ -8,11 +8,11 @@ namespace SDL
             new MCustomer("Sehar", "1234567", "Reno NV")
         };
         public static List<MProduct> products = new List<MProduct>(){
-            new MProduct("Chocolate",10.00)
+            new MProduct("gd789","Chocolate",10.00)
         };
 
         public static List<MLocation> locations = new List<MLocation>(){
-            new MLocation("Walmart","xyz")
+            new MLocation(1,"Walmart","xyz")
         };
     }
 }

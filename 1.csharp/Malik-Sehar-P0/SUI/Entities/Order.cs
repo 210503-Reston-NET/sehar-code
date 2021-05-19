@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 #nullable disable
 
-namespace SDL.Entities
+namespace SUI.Entities
 {
     public partial class Order
     {
@@ -15,8 +15,8 @@ namespace SDL.Entities
         public int Id { get; set; }
         public int? CustomerId { get; set; }
         public int? StoreFrontId { get; set; }
-        public double Total { get; set; }
         public byte[] DateCreated { get; set; }
+        public string Total { get; set; }
 
         public virtual Customer Customer { get; set; }
         public virtual StoreFront StoreFront { get; set; }

@@ -62,5 +62,70 @@ namespace SDL
         public List<MLocation> GetAllLocation(){
             throw new NotImplementedException();
         }
+
+        public List<MCustomer> searchCustomer(MCustomer customer)
+        {
+            throw new NotImplementedException();
+        }
+
+        public MLocation GetAStore(MLocation location)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<MInventory> GetProductInStock(MLocation mLocation)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<MProduct> GetProductsInventory(MInventory inventory)
+        {
+            throw new NotImplementedException();
+        }
+
+        public MProduct searchAProduct(MProduct mProduct)
+        {
+            throw new NotImplementedException();
+        }
+
+        public MCustomer searchACustomer(MCustomer customer)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ItemToAdd(MProduct mLine, MCustomer mCustomer, int q, int storeId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<MOrders> GetAllOrders()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ItemToAddInOrders(MCustomer mCustomer, int storeid, double q)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ItemToAdd(MProduct mLine, MCustomer mCustomer, int q, double storeId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ItemToAddInOrders(MCustomer mCustomer, int storeid, int q)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ItemToAddInOrders(MOrders orders)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<MProduct> GetAllProductss()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

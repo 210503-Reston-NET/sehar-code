@@ -7,10 +7,13 @@ namespace Models
             this.Name = name;
             this.Price = price;
         }
+        public MProduct(string barcode, string name, double price) : this( name, price)
+        {
+            this.Barcode = barcode;
+        }
         public MProduct(){
             
         }
-        public int Id {get;}
         public string Name {get; set;}
         public double Price {get; set;}
         public string Barcode {get; set;}
@@ -19,7 +22,7 @@ namespace Models
 
         public override string ToString()
         {
-            return $"Product Name: {Name}\n Price: {Price}";
+            return $"Product Name: {Name}\n Price: {Price}.00";
         }
         public bool Equals(MProduct product)
         {

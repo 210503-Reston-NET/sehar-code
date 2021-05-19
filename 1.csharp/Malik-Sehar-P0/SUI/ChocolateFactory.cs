@@ -25,6 +25,8 @@ namespace SUI
             var context = new chocolatefactoryContext(options);
             
             switch(menuType.ToLower()){
+                case "login":
+                    return new CustomerLogin(new CustomerBL(new RepoDB(context)));
                 case "main":
                     return new CustomerUI();
                 case "customers":
@@ -33,6 +35,8 @@ namespace SUI
                     return new ProductUI();
                 case "location":
                     return new LocationUI();
+                case "orders":
+                    return new ViewOrdersUI(new LineItemBL(new RepoDB(context)));
                 default:
                     return null;
             }

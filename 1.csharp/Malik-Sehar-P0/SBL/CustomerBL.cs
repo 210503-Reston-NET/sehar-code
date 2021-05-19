@@ -1,6 +1,7 @@
 using Models;
 using System.Collections.Generic;
 using SDL;
+using System.Linq;
 namespace SBL
 {
     public class CustomerBL:ICustomerBL
@@ -14,6 +15,11 @@ namespace SBL
         }
         public MCustomer AddCustomer(MCustomer customer){
             return _repo.AddCustomer(customer);
+        }
+
+        public MCustomer searchACustomer(MCustomer customer)
+        {
+            return _repo.searchACustomer(customer);
         }
     }
 }

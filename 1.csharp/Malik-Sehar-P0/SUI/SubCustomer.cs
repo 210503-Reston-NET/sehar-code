@@ -15,16 +15,16 @@ namespace SUI
         public void start(){
             bool repeat = true;
             do{
-                Console.WriteLine("Press 1 to add a customer");
-                Console.WriteLine("Press 2 to View a Customer");
-                Console.WriteLine("Press 0 to Go Bacl!");
+                Console.WriteLine("Press [1] to search customer by Phone no");
+                Console.WriteLine("Press [2] to Add a Customer");
+                Console.WriteLine("Press [0] to Go Bacl!");
                 string input = Console.ReadLine(); 
             switch(input){
                 case "1":
-                    AddACustomer();
+                    searchACustomer();
                 break;
                 case "2":
-                    ViewCustomers();
+                    AddACustomer();
                 break;
                 case "0":
                     repeat = false;
@@ -47,6 +47,16 @@ namespace SUI
                 }
             }
             
+        }
+        private void searchACustomer(){
+            string PhoneNo = _ivalidateService.ValidateString("Enter Customer's PhoneNo:");
+            MCustomer customer = new MCustomer(PhoneNo);
+            try{
+                MCustomer searchedCustomer = _iCustomerBL.searchACustomer(customer);
+                Console.WriteLine(searchedCustomer.ToString());
+            }catch(Exception ex){
+                Console.WriteLine(ex.Message);
+            }
         }
         private void AddACustomer(){
             Console.WriteLine("Add Customer Details!");

@@ -18,7 +18,7 @@ namespace SBL
 
         public List<MProduct> GetAllProducts()
         {
-            return _repo.GetAllProducts();
+            return _repo.GetAllProductss();
         }
         public MProduct GetAProduct(MProduct product){
             Console.WriteLine(product.ToString());
@@ -26,6 +26,11 @@ namespace SBL
                 throw new Exception("Product already Exit!");
             }
             return _repo.GetAProduct(product);
+        }
+
+        public MProduct searchAProduct(MProduct mProduct)
+        {
+            return _repo.searchAProduct(mProduct);
         }
     }
 }
