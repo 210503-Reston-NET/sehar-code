@@ -1,5 +1,8 @@
 namespace Models
 {
+    /// <summary>
+    /// this model contains constructor for customer
+    /// </summary>
     public class MCustomer
     {
         public MCustomer(string name, string phoneNo, string address){

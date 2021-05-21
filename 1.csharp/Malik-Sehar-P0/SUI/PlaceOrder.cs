@@ -59,7 +59,7 @@ namespace SUI
         }
         
         private MLocation SearchForStore (){
-            Console.WriteLine("Enter Name and Location for the store you want to put an order. Please note that this is a case sensitive app.");
+            Console.WriteLine("Enter Store Name and Location for the store you want to put an order.");
             string name = _IValidate.ValidateString("Enter the name of store");
             string address = _IValidate.ValidateString("Enter the address of store");
             try{
@@ -80,16 +80,12 @@ namespace SUI
                         List<MProduct> listProducts = _iInventory.GetProductsInventory(inventory);
                         foreach (MProduct item in listProducts)
                         {   
-                            Console.WriteLine($"{i++} : {item.ToString()}");  
-                            // selectedPro = item;          
+                            Console.WriteLine($"{i++} : {item.ToString()}");
                         }
                     }
-                    
-                    // for(int i =1; i<listProducts.Count; i++){
-                    //     Console.WriteLine(listProducts[i].Name.ToString());
-                    // }
                     selectedInventory = inventory.StoreId; 
                 }
+                
                     selectProductByUser(selectedInventory, mlocation);
                     bool repeat = true;
                     do{

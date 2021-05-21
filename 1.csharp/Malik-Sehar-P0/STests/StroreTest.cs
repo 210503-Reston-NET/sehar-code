@@ -20,7 +20,9 @@ namespace StoreTest
         }
         [Theory]
         // [InlineData("2345678i")]
-        [InlineData("beufkjsdhfkjs1")]
+        // [InlineData("beufkjsdhfkjs1")]
+        [InlineData("Sehar Malik")]
+        //[Fact]
         public void CustomerShouldNotSetInvalidData(string input)
         {
             //Arrange 

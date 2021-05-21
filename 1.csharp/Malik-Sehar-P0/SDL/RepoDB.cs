@@ -47,13 +47,25 @@ namespace SDL
 
 
 
-        public List<MOrders> GetAllOrders()
+        public List<MOrders> GetAllOrders(MLocation searchedOrdersInStore)
         {
-            // List<MOrders> allOrders = (
-            //     from li in _context.LineItems join o in _context.Orders on li.OrderId equals o.Id join p in _context.Products on li.ProductId equals p.BarCode join c in _context.Customers on o.CustomerId equals c.Id join l in _context.StoreFronts on o.StoreFrontId equals l.Id where o.Id.Equals(li.OrderId) select new MLineItems{
-            //         Quantity = li.Quantity,
-            //         products = new MProduct()}).ToList();
-            return null;
+            List<MOrders> result = (
+                from o in _context.Orders join c in _context.Customers on o.CustomerId equals c.Id join l in _context.StoreFronts on o.StoreFrontId equals l.Id where o.StoreFrontId.Equals(searchedOrdersInStore.Id)
+                select new MOrders(){
+                    Id = o.Id,
+                    Total = o.Total,
+                    customer = new MCustomer(){
+                        Name = c.CustomerName,
+                        PhoneNo = c.PhoneNum,
+                        Address = c.CustomerAddress
+                    },
+                    storeFronts = new MLocation(){
+                        Name = l.StoreName,
+                        Address = l.StoreAddress
+                    }
+                }
+            ).ToList();
+            return result;
         }
 
         public List<MProduct> GetAllProductss()
@@ -103,6 +115,8 @@ namespace SDL
         public void ItemToAdd(int id, List<MLineItems> lineItems)
         {
             foreach(MLineItems item in lineItems){
+                
+                Console.WriteLine($"Product Name: {item.product.Name}\n Product Price: {item.product.Price}\n Quantity: {item.Quantity}");
                 Entity.LineItem line1 = _context.LineItems.Add(
                     new Entity.LineItem{
                         OrderId = id,
@@ -113,7 +127,11 @@ namespace SDL
             }
             _context.SaveChanges();
         }
-
+        // public void ItemToUpdateInventory(MOrders orders){
+        //     Entity.Inventory inventory = new Entity.Inventory{
+                
+        //     }
+        // }
         public void ItemToAddInOrders(MOrders orders){
             Entity.Order newOrder = new Entity.Order
             {
@@ -122,9 +140,10 @@ namespace SDL
                 Total = orders.Total
             };
             try{
-                Entity.Order AddedOrder = _context.Orders.Add(newOrder).Entity;
+                Entity.Order AddedOrded = _context.Orders.Add(newOrder).Entity;
                 _context.SaveChanges();
-                ItemToAdd(AddedOrder.Id, orders.lineItems);
+                ItemToAdd(AddedOrded.Id, orders.lineItems);
+                // ItemToUpdateInventory(orders);
             }catch(Exception ex){
                 Console.WriteLine(ex.Message);
             }

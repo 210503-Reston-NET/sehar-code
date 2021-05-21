@@ -33,10 +33,10 @@ namespace SUI
                     return new SubCustomer(new CustomerBL(new RepoDB(context)), new ValidateService());
                 case "products":
                     return new ProductUI();
+                case "orders":
+                    return new ViewOrdersUI(new LineItemBL(new RepoDB(context)), new ValidateService());
                 case "location":
                     return new LocationUI();
-                case "orders":
-                    return new ViewOrdersUI(new LineItemBL(new RepoDB(context)));
                 default:
                     return null;
             }

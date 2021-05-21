@@ -29,8 +29,8 @@ namespace SUI
             .Options;
             var context = new chocolatefactoryContext(options);
             do{
-                Console.WriteLine("To Place an Order Press 1");
-                Console.WriteLine("To Go back press 2");
+                Console.WriteLine("Press 1 To Place an Order");
+                Console.WriteLine("Press 2 To Go back");
                 string input = Console.ReadLine();
                 switch(input){
                     case "1":

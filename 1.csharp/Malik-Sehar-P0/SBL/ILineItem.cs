@@ -4,7 +4,7 @@ namespace SBL
 {
     public interface ILineItem
     {
-        List<MOrders> GetAllOrders();
+        List<MOrders> GetAllOrders(MLocation searchedOrdersInStore);
         public void ItemToAddInOrders(MOrders orders);
     }
 }

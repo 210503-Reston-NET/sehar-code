@@ -6,7 +6,7 @@ namespace SUI
 {
     public class CustomerUI: IChocolateFactory
     {
-        private IChocolateFactory subCustomer;
+        // private IChocolateFactory subCustomer;
         public void start(){
             bool repeat = true;
             do{
@@ -16,20 +16,10 @@ namespace SUI
                 string input = Console.ReadLine(); 
             switch(input){
                 case "1":
-                    subCustomer = ChocolateFactory.mainMenu("customers");
-                    subCustomer.start();
+                    ChocolateFactory.mainMenu("customers").start();
                 break;
-                // case "2":
-                //     subCustomer = ChocolateFactory.mainMenu("products");
-                //     subCustomer.start();
-                // break;
-                // case "3":
-                //     subCustomer = ChocolateFactory.mainMenu("location");
-                //     subCustomer.start();
-                // break;
                 case "2":
-                    subCustomer = ChocolateFactory.mainMenu("orders");
-                    subCustomer.start();
+                    ChocolateFactory.mainMenu("orders").start();
                 break;
                 case "0":
                     repeat = false;

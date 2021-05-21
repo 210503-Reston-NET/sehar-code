@@ -12,16 +12,10 @@ namespace SBL
             _repo = repo;
         }
 
-        public List<MOrders> GetAllOrders()
+        public List<MOrders> GetAllOrders(MLocation searchedOrdersInStore)
         {
-            return _repo.GetAllOrders();
+            return _repo.GetAllOrders(searchedOrdersInStore);
         }
-
-        // public double GetTotal(MProduct mProduct, int quantity)
-        // {
-        //     MProduct product =  _repo.GetAProduct(mProduct);
-        //     return product.Price*quantity;
-        // }
         public void ItemToAddInOrders(MOrders orders){
             _repo.ItemToAddInOrders(orders);
         }

@@ -15,7 +15,7 @@ namespace SDL
         List<MProduct> GetProductsInventory(MInventory inventory);
         MProduct searchAProduct(MProduct mProduct);
         MCustomer searchACustomer(MCustomer customer);
-        List<MOrders> GetAllOrders();
+        List<MOrders> GetAllOrders(MLocation searchedOrdersInStore);
         public void ItemToAddInOrders(MOrders orders);
     }
 }

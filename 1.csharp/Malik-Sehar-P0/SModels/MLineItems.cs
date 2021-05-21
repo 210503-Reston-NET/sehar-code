@@ -20,5 +20,6 @@ namespace Models
         public List<MOrders> orders {get; set;}
         public MProduct product {get; set;}
         public List<MProduct> products {get; set;}
+        public List<MLocation> locations {get; set;}
     }
 }

@@ -23,6 +23,7 @@ namespace SUI
                 {
                     var phone =  customer.PhoneNo.ToString();
                     if(phone == input){
+                        Console.WriteLine($"Welcome {customer.Name}");
                         IChocolateFactory goToOrders = new OrdersUI(customer);
                         goToOrders.start();
                         repeat = false;

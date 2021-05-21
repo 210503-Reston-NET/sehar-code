@@ -4,26 +4,34 @@ namespace Models
 {
     public class MOrders
     {
-        public readonly DateTime date;
         public MOrders(double total, int custId, int locationId){
-            this.date = DateTime.Now;
             this.Total = total;
             this.CustID = custId;
             this.LocationID = locationId;
         }
+        public MOrders(DateTime orderdate)
+        {
+            this.date = orderdate;
+        }
+        public MOrders(DateTime orderdate, double total) : this(orderdate)
+        {
+            this.Total = total;
+        }
         //Chaining Constructor
-        public MOrders(int id,string displayDate, double total, int custId, int locationId) : this(total, custId,locationId)
+        public MOrders(int id, double total, int custId, int locationId) : this(total, custId,locationId)
         {
             this.Id = id;
         }
         public MOrders(){}
-        public int Id {get;}
+        public int Id {get; set;}
+        public DateTime date {get; set;}
         public double Total {get; set;}
         public int CustID {get; set;} 
         public int OrderID {get; set;}
         public int LocationID {get; set;}
-        public List<MCustomer> customers {get; set;}
-        public List<MLocation> storeFront {get; set;}
+
+        public MLocation storeFronts {get; set;}
+        public MCustomer customer {get; set;}
         public List<MLineItems> lineItems {get; set;}
         public void UpdateTotal()
         {

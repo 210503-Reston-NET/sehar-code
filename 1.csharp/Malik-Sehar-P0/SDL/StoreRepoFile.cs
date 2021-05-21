@@ -98,7 +98,7 @@ namespace SDL
             throw new NotImplementedException();
         }
 
-        public List<MOrders> GetAllOrders()
+        public List<MOrders> GetAllOrders(MLocation searchedOrdersInStore)
         {
             throw new NotImplementedException();
         }
