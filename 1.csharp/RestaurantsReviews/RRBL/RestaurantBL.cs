@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using RRModel;
 using RRDL;
+using System;
 namespace RRBL
 {
     /// <summary>
@@ -18,6 +19,17 @@ namespace RRBL
         public RestaurantBL(IRepository repo){
             _repo = repo;
         }
+
+        public Restaurants AddRestaurant(Restaurants restaurants)
+        {
+            if(_repo.GetRestaurants(restaurants) != null){
+                throw new Exception("Restaurant already exist :<");
+            }
+            // Call a repo method that adds a restaurant
+            return _repo.AddRestaurant(restaurants);
+
+        }
+
         public List<Restaurants> GetAllRestaurants(){
             //Note that is method isn't really dependent on any input/ parameters, i can directly call the
             //DL method in charge of getting all restaurants

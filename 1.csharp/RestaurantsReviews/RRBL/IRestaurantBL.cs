@@ -4,6 +4,7 @@ namespace RRBL
 {
     public interface IRestaurantBL
     {
-         List<Restaurants> GetAllRestaurants();
+        List<Restaurants> GetAllRestaurants();
+        Restaurants AddRestaurant(Restaurants restaurants);
     }
 }

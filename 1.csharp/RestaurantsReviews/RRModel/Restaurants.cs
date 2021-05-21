@@ -34,6 +34,11 @@ namespace RRModel
         public override string ToString(){
             return $" Name: {Name} \n Location: {City}, {State}";
         }
+        public bool Equals(Restaurants restaurants)
+        {
+            return this.Name.Equals(restaurants.Name) && this.City.Equals(restaurants.City) && this.State.Equals(restaurants.State);
+        }
+
     }
 
 }

@@ -17,7 +17,7 @@ namespace RRUI
                 string input = Console.ReadLine();
                 switch(input){
                 case "1":
-                    submenu = new RestaurantMenu(new RestaurantBL(new RepoSC()));
+                    submenu = new RestaurantMenu(new RestaurantBL(new RepoFile()), new ValidateService());
                     submenu.start();
                 break;
                 case "2":

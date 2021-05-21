@@ -5,6 +5,8 @@ namespace RRDL
 {
     public interface IRepository
     {
-         List<Restaurants> GetAllRestaurants();
+        List<Restaurants> GetAllRestaurants();
+        Restaurants AddRestaurant(Restaurants restaurants);
+        Restaurants GetRestaurants(Restaurants restaurants);
     }
 }
